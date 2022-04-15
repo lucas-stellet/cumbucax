@@ -42,7 +42,8 @@ defmodule Cumbucax.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:money, "~> 1.9"},
-      {:credo, "~> 1.6", only: [:dev, :test], runtime: false}
+      {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
+      {:guardian, "~> 2.0"}
     ]
   end
 
