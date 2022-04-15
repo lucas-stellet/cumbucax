@@ -41,7 +41,8 @@ defmodule Cumbucax.MixProject do
       {:telemetry_poller, "~> 1.0"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:money, "~> 1.9"}
+      {:money, "~> 1.9"},
+      {:credo, "~> 1.6", only: [:dev, :test], runtime: false}
     ]
   end
 
