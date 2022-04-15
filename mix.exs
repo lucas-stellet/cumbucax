@@ -43,7 +43,10 @@ defmodule Cumbucax.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:money, "~> 1.9"},
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
-      {:guardian, "~> 2.0"}
+      {:guardian, "~> 2.0"},
+      {:argon2_elixir, "~> 3.0"},
+      {:faker, "~> 0.17", only: :test},
+      {:ex_machina, "~> 2.7.0"}
     ]
   end
 
