@@ -7,6 +7,9 @@ defmodule Cumbucax.MixProject do
       version: "0.1.0",
       elixir: "~> 1.12",
       elixirc_paths: elixirc_paths(Mix.env()),
+      preferred_cli_env: [
+        "test.watch": :test
+      ],
       compilers: Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
@@ -20,7 +23,7 @@ defmodule Cumbucax.MixProject do
   def application do
     [
       mod: {Cumbucax.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :ex_machina]
     ]
   end
 
@@ -46,7 +49,8 @@ defmodule Cumbucax.MixProject do
       {:guardian, "~> 2.0"},
       {:argon2_elixir, "~> 3.0"},
       {:faker, "~> 0.17", only: :test},
-      {:ex_machina, "~> 2.7.0"}
+      {:ex_machina, "~> 2.7.0"},
+      {:mix_test_watch, "~> 1.0", only: [:dev, :test], runtime: false}
     ]
   end
 
