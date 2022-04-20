@@ -28,7 +28,15 @@ config :phoenix, :json_library, Jason
 
 # Money default current configuration
 config :money,
-  default_currency: :BRL
+  default_currency: :BRL,
+  separator: ".",
+  delimiter: ","
+
+# mix test.watch clear console before each run
+if Mix.env() == :dev do
+  config :mix_test_watch,
+    clear: true
+end
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
