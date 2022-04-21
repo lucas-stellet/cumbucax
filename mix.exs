@@ -50,7 +50,7 @@ defmodule Cumbucax.MixProject do
       {:argon2_elixir, "~> 3.0"},
       {:faker, "~> 0.17", only: :test},
       {:ex_machina, "~> 2.7.0"},
-      {:mix_test_watch, "~> 1.0", only: [:dev, :test], runtime: false}
+      {:dialyxir, "~> 1.0", only: [:dev], runtime: false}
     ]
   end
 
