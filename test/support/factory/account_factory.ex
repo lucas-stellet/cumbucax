@@ -9,7 +9,7 @@ defmodule Cumbucax.Factory.AccountFactory do
     quote do
       def account_factory do
         %Account{
-          balance: Money.new(100),
+          balance: Money.new(100_000),
           branch: "0001",
           digit: Faker.Util.format("%d"),
           number: Faker.Util.format("%d%d%d%d%d%d")

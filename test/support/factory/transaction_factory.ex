@@ -9,12 +9,10 @@ defmodule Cumbucax.Factory.TransactionFactory do
     quote do
       def transaction_factory do
         %Transaction{
-          amount: Money.new(10),
-          overturned: false,
-          overturned_at: nil,
+          amount: Money.new(10000),
           status: :pending,
-          beneficiary_id: Ecto.UUID.generate(),
-          requester_id: Ecto.UUID.generate()
+          beneficiary_account_id: Ecto.UUID.generate(),
+          requester_account_id: Ecto.UUID.generate()
         }
       end
     end

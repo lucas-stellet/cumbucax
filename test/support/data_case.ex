@@ -24,6 +24,8 @@ defmodule Cumbucax.DataCase do
       import Ecto.Changeset
       import Ecto.Query
       import Cumbucax.DataCase
+      import Cumbucax.Factory
+      import Cumbucax.Helpers
     end
   end
 
