@@ -7,9 +7,6 @@ defmodule Cumbucax.MixProject do
       version: "0.1.0",
       elixir: "~> 1.12",
       elixirc_paths: elixirc_paths(Mix.env()),
-      preferred_cli_env: [
-        "test.watch": :test
-      ],
       compilers: Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
@@ -50,7 +47,8 @@ defmodule Cumbucax.MixProject do
       {:argon2_elixir, "~> 3.0"},
       {:faker, "~> 0.17", only: :test},
       {:ex_machina, "~> 2.7.0"},
-      {:dialyxir, "~> 1.0", only: [:dev], runtime: false}
+      {:dialyxir, "~> 1.0", only: [:dev], runtime: false},
+      {:poison, "~> 5.0"}
     ]
   end
 
