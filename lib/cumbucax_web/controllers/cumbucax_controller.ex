@@ -23,8 +23,8 @@ defmodule CumbucaxWeb.CumbucaxController do
   def login(conn, %{"cpf" => cpf, "password" => password}) do
     with {:ok, token} <- Guardian.authenticate(cpf: cpf, password: password) do
       conn
-      |> put_status(:created)
-      |> render("register.json", token: token)
+      |> put_status(:ok)
+      |> render("login.json", token: token)
     end
   end
 
@@ -33,7 +33,7 @@ defmodule CumbucaxWeb.CumbucaxController do
 
     with {:ok, transfer} <- Cumbucax.transfer(updated_transfer_params) do
       conn
-      |> put_status(:created)
+      |> put_status(:ok)
       |> render("transfer.json", transfer: transfer)
     end
   end

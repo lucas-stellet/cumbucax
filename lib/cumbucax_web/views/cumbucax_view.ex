@@ -7,7 +7,7 @@ defmodule CumbucaxWeb.CumbucaxView do
     %{data: %{account: account, token: token}}
   end
 
-  def render("register.json", %{token: token}) do
+  def render("login.json", %{token: token}) do
     %{data: %{token: token}}
   end
 

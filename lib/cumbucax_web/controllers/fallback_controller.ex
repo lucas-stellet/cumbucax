@@ -27,7 +27,7 @@ defmodule CumbucaxWeb.FallbackController do
     conn
     |> put_status(:unauthorized)
     |> put_view(ErrorView)
-    |> render("error.json", reason: "Incorrect document or password")
+    |> render("error.json", reason: "Incorrect cpf or password")
   end
 
   def call(conn, {:error, reason}) do
