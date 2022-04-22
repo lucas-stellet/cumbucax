@@ -11,16 +11,34 @@ defmodule Seeds do
         first_name: "John",
         last_name: "Doe",
         password_hash:
-          "$argon2id$v=19$m=65536,t=8,p=2$5lVFTBqK5NhI2z5xr1j/bA$LPKvma+WVvjCf2tdOzbNXuUTivvHJauYCET26W0cfn0"
+          "$argon2id$v=19$m=65536,t=8,p=2$8U1BcFRm2aRzvQGIYZizcg$bQZA02f4OraWqqM+r3OTJLBDuflyvxNZMze1H/J5gqU"
       })
 
     Repo.insert!(%Account{
       id: Ecto.UUID.generate(),
       branch: "0001",
-      number: "135790",
-      digit: "2",
-      balance: Money.new(100),
+      number: "123456",
+      digit: "7",
+      balance: Money.new(100_000),
       user_id: user_1.id
+    })
+
+    user_2 =
+      Repo.insert!(%User{
+        cpf: "005.006.007-08",
+        first_name: "Lana",
+        last_name: "Doe",
+        password_hash:
+          "$argon2id$v=19$m=65536,t=8,p=2$8U1BcFRm2aRzvQGIYZizcg$bQZA02f4OraWqqM+r3OTJLBDuflyvxNZMze1H/J5gqU"
+      })
+
+    Repo.insert!(%Account{
+      id: Ecto.UUID.generate(),
+      branch: "0001",
+      number: "654321",
+      digit: "7",
+      balance: Money.new(100_000),
+      user_id: user_2.id
     })
   end
 end
