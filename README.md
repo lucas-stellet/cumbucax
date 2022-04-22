@@ -1,10 +1,15 @@
 # Cumbucax
+## Rodando localmente
 
-## Acessando a API online
+Com a inenção de facilitar a iniclização e o uso da aplicação localmente, criei um setup para o uso do banco de dados.
 
-A API está disponível no endereço abaixo:
+## Postman collection
 
-[cumbucax.gigalixirapp.com/api](https://cumbucax.gigalixirapp.com/api)
+Caso você utilize o Postman como interface para enviar requisições para API's, basta acessar o link abaixo que você terá acesso a uma coleção de requisições tanto no ambiente de produção quanto do de desenvolvimento.
+
+### [Cumbucax Public Workspace Postman](https://www.postman.com/restless-capsule-16017/workspace/cumbucax/overview)
+
+## Dados iniciais
 
 Para facilitar o acesso, alguns usuários e suas respectivas contas foram criados.
 
@@ -33,16 +38,6 @@ Para facilitar o acesso, alguns usuários e suas respectivas contas foram criado
   }
 }
 ```
-
-## Rodando localmente
-
-Com a inenção de facilitar a iniclização e o uso da aplicação localmente, criei um setup para o uso do banco de dados.
-
-## Postman collection
-
-Caso você utilize o Postman como interface para enviar requisições para API's, basta acessar o link abaixo que você terá acesso a uma coleção de requisições tanto no ambiente de produção quanto do de desenvolvimento.
-
-### [Cumbucax Public Workspace Postman](https://www.postman.com/restless-capsule-16017/workspace/cumbucax/overview)
 
 ## Utilização da API
 ### Registro de Conta Bancaria
