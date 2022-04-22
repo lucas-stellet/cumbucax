@@ -34,31 +34,30 @@ defmodule CumbucaxTest do
         first_name: "John",
         last_name: "Doe",
         password: "swordfish",
-        balance: 11_111
+        balance: "R$111,11"
       }
 
       invalid_attrs = %{
         cpf: "00100200304",
         first_name: "John",
-        password: "senhainvalida123",
-        balance: -1
+        password: "senhainvalida123"
       }
 
       %{valid_attrs: valid_attrs, invalid_attrs: invalid_attrs}
     end
 
     test "returns a bank account information when given valid attributes", %{valid_attrs: attrs} do
-      assert {:ok, bank_account} = Cumbucax.register_user_and_account(attrs)
+      assert {:ok, _user, bank_account} = Cumbucax.register_user_and_account(attrs)
 
       assert bank_account.owner == attrs.first_name <> " " <> attrs.last_name
-      assert bank_account.balance == Money.new(attrs.balance) |> convert_money_to_string()
+      assert bank_account.balance == attrs.balance
     end
 
     test "returns an tuple error when given invalid attributes missing last name", %{
       invalid_attrs: attrs
     } do
-      assert {:error, %{last_name: ["can't be blank"]}} =
-               Cumbucax.register_user_and_account(attrs)
+      assert {:error, changeset} = Cumbucax.register_user_and_account(attrs)
+      assert errors_on(changeset) == %{balance: ["can't be blank"], last_name: ["can't be blank"]}
     end
   end
 
