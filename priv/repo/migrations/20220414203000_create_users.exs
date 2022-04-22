@@ -11,7 +11,5 @@ defmodule Cumbucax.Repo.Migrations.CreateUsers do
 
       timestamps()
     end
-
-    create unique_index(:users, [:cpf])
   end
 end
