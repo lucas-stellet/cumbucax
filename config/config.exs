@@ -18,6 +18,19 @@ config :cumbucax, CumbucaxWeb.Endpoint,
   pubsub_server: Cumbucax.PubSub,
   live_view: [signing_salt: "qK4k6/0y"]
 
+config :cumbucax, CumbucaxWeb.Auth.Guardian,
+  issuer: "cumbucax",
+  ttl: {30, :minutes},
+  secret_key:
+    System.get_env(
+      "GUARDIAN_SECRET",
+      "UaE9J9jqkLcBcV46r+WihLKwNea5HLz+X2eo3ij4CYBuelnEQo3eXi1QEIp4PzC2"
+    )
+
+config :cumbucax, CumbucaxWeb.Auth.Pipeline,
+  module: CumbucaxWeb.Auth.Guardian,
+  error_handler: CumbucaxWeb.Auth.ErrorHandler
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
@@ -31,12 +44,6 @@ config :money,
   default_currency: :BRL,
   separator: ".",
   delimiter: ","
-
-# mix test.watch clear console before each run
-if Mix.env() == :dev do
-  config :mix_test_watch,
-    clear: true
-end
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
