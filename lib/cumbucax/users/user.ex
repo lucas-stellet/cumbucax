@@ -39,13 +39,12 @@ defmodule Cumbucax.Users.User do
   def changeset(attrs) do
     %__MODULE__{}
     |> cast(attrs, @required_fields)
-    |> unique_constraint(:cpf, message: "User with this CPF already exists.")
     |> validate_required(@required_fields)
     |> validate_format(:cpf, ~r/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/, message: "invalid format")
     |> validate_length(:password,
       min: 6,
       max: 10,
-      message: "password has to be between 6 and 10 characters. "
+      message: "password has to be between 6 and 10 characters"
     )
     |> update_change(:first_name, &String.capitalize(&1))
     |> update_change(:last_name, &String.capitalize(&1))

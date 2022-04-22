@@ -31,15 +31,15 @@ defmodule Cumbucax.Users do
   - `cpf`: User's CPF.
   - `id`: User's ID.
 
-  Returns an error tuple if the user doest not exist.
+  Returns nil if the user doest not exist.
 
   ## Examples
 
       iex> get_user_by([{:cpf, "valid cpf"}])
-      {:ok, %User{}}
+      %User{}
 
       iex> get_user_by([{:cpf, "invalid_cpf}])
-      {:error, "User not found"}
+      nil
 
   """
   def get_user_by(filters) do
