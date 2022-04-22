@@ -36,19 +36,7 @@ Para facilitar o acesso, alguns usuários e suas respectivas contas foram criado
 
 ## Rodando localmente
 
-Com a inenção de facilitar a iniclização e o uso da aplicação localmente, criei um setup com Docker.
-Para iniciar basta ter o docker e o docker-compose instalados na sua máquina, dessa forma você tera um container Elixir/Phoenix com a aplicação e um database PostgreSQL rodando localmente.
-Execute o comando abaixo e aguarde os logs mais abaixo aparecerem em seu terminal.
-
-```bash
-docker-compose up
-```
-
-```
-cumbucax    | [info] Access CumbucaxWeb.Endpoint at http://localhost:4000
-```
-
-Com esas informações em tela a sua aplicação estará funcionando e pronto para o acesso.
+Com a inenção de facilitar a iniclização e o uso da aplicação localmente, criei um setup para o uso do banco de dados.
 
 ## Postman collection
 
