@@ -18,6 +18,7 @@ defmodule CumbucaxWeb.Router do
 
     post "/register", CumbucaxController, :register
     post "/login", CumbucaxController, :login
+    get "/", CumbucaxController, :hello
   end
 
   scope "/api", CumbucaxWeb do
